@@ -1,9 +1,10 @@
-##Capstone Homework #1 design with tests.
+## Capstone Homework #1 design with tests.
 Due: Tuesday April 27 at 11:59 pm
-###Summary: 
+
+### Summary: 
 In this exercise you will do some program design using automated tests
 
-Production code:
+Production code:   k
 Write a production code function to accomplish the following task, (you can of course have helper
 functions/methods that are intended to be private, but there should be a single public function that
 accomplishes the task and gets tested)
