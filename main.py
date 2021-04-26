@@ -19,7 +19,7 @@ def calculate_total_charge(abbr_state, list_of_records):
 
     #print(list_of_records)
     print('\n')
-    
+
     for each_record in list_of_records:
 
         print(each_record.item_name, each_record.item_price, each_record.item_type)
