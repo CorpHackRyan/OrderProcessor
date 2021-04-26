@@ -1,5 +1,8 @@
 from dataclasses import dataclass
 
+# 4/25/21 - 45 minutes invested
+
+
 # calculate the total to charge a customer at checkout.
 # function should take the users state and a list of records* of items to be purchased,
 # it should return the total that the user will be charged (including sales tax).
@@ -21,7 +24,8 @@ class Record:
     item_price: float
     item_type: str
 
-def calculate_total_charge(abbr_state, items):
+
+def calculate_total_charge(abbr_state, list_of_records):
     state_tax = {'MA': '.0625', 'NH': '0.0', 'VT': ".06" }
     amount = 0.0
 
@@ -36,11 +40,7 @@ def calculate_total_charge(abbr_state, items):
 
 if __name__ == '__main__':
 
-    list_of_food = {}
+    state = input("Enter a valid state: MA, NH or VT")
 
-    #state = 'bad state'
-    state = "MA"
-    #state = 'NH'
-    #state = 'VT'
 
-    print(calculate_total_charge(abbr_state=state, items=list_of_food))
+    #print(calculate_total_charge(abbr_state=state, items=list_of_food))
