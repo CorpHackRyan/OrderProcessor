@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 # 4/25/21 - 45 minutes invested
 
 
@@ -17,18 +18,15 @@ def calculate_total_charge(abbr_state, list_of_records):
                  'NH': '0.0',
                  'VT': "0.06"}
 
-    #print(list_of_records)
+    # print(list_of_records)
     print('\n')
 
     for each_record in list_of_records:
-
         print(each_record.item_name, each_record.item_price, each_record.item_type)
 
-
-
     # Types of goods accepted: Wic Eligible food, Clothing, everything else
-    #print(abbr_state, list_of_records[2].item_price)
-    #print(len(list_of_records))
+    # print(abbr_state, list_of_records[2].item_price)
+    # print(len(list_of_records))
 
     # return 'total that user will be charged'
     # It should return the total that the user will be charged (including sales tax).
@@ -39,7 +37,6 @@ def calculate_total_charge(abbr_state, list_of_records):
 
 
 if __name__ == '__main__':
-
+    pass
     # calculate_total_charge('MA', new_item)
     # print(calculate_total_charge(abbr_state=state, items=list_of_food))
-    pass
