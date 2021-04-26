@@ -12,4 +12,5 @@ import main
 
 
 def test_calculate_total_charge():
-    pass
+    new_item = main.Record('shirt', 1.50, 'Clothing')
+    main.calculate_total_charge('MA', new_item)

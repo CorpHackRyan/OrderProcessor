@@ -39,7 +39,7 @@ def calculate_total_charge(abbr_state, list_of_records):
 
 
 if __name__ == '__main__':
-    new_item = Record('shirt', 1.50, 'Clothing')
+
     calculate_total_charge('MA', new_item)
 
     #print(calculate_total_charge(abbr_state=state, items=list_of_food))
