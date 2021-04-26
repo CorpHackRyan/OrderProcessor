@@ -7,3 +7,9 @@
 # Test Bad Cases
 # Test edge cases
 # Research other style of automated stesting
+
+import main
+
+
+def test_calculate_total_charge():
+    pass

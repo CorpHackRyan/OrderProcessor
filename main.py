@@ -26,21 +26,20 @@ class Record:
 
 
 def calculate_total_charge(abbr_state, list_of_records):
-    state_tax = {'MA': '.0625', 'NH': '0.0', 'VT': ".06" }
-    amount = 0.0
+    state_tax = {'MA': '0.0625',
+                 'NH': '0.0',
+                 'VT': "0.06" }
 
-    if abbr_state != 'MA':
-        return('State entered is not valid. Please choose MA, NH or VT.')
-
-    return 'total that user will be charged'
+    print(abbr_state, list_of_records.item_type)
+    # return 'total that user will be charged'
 
     # if abbr_state
     # // Code to calculate total user will be charged here
+    # remember to check how each state handles each particular item
 
 
 if __name__ == '__main__':
-
-    state = input("Enter a valid state: MA, NH or VT")
-
+    new_item = Record('shirt', 1.50, 'Clothing')
+    calculate_total_charge('MA', new_item)
 
     #print(calculate_total_charge(abbr_state=state, items=list_of_food))
