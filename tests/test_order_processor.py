@@ -53,10 +53,10 @@ def test_verify_total_cost_NH():
 
 
 def test_verify_total_cost_ME():
-    new_record1 = order_processor.Record('peach', 25, 'everything else')
-    new_record2 = order_processor.Record('pear', 10, 'Wic Eligible food')
-    new_record3 = order_processor.Record('rice', 500, 'Wic Eligible food')
-    new_record4 = order_processor.Record('jacket', 30, 'Clothing')
+    new_record1 = order_processor.Record('apple', 25, 'everything else')
+    new_record2 = order_processor.Record('potato', 10, 'Wic Eligible food')
+    new_record3 = order_processor.Record('carrots', 500, 'Wic Eligible food')
+    new_record4 = order_processor.Record('sneakers', 30, 'Clothing')
     all_records = [new_record1, new_record2, new_record3, new_record4]
     assert (order_processor.calculate_total_charge(ME, all_records) == 568.02)
 
@@ -71,3 +71,11 @@ def test_clothing_above_175_dollars_MA():
     new_record2 = order_processor.Record('shirts', 176, 'Clothing')
     all_records = [new_record2]
     assert (order_processor.calculate_total_charge(MA, all_records) == 176.06)
+
+
+def test_verify_no_refund():
+    new_record1 = order_processor.Record('sweatshirt', 0, 'Clothing')
+    new_record2 = order_processor.Record('soup', 0, 'Wic Eligible food')
+    all_records = [new_record1, new_record2]
+    assert (order_processor.calculate_total_charge(MA, all_records) == -1)
+
