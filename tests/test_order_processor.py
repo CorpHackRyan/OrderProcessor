@@ -60,8 +60,6 @@ def test_verify_total_cost_ME():
     all_records = [new_record1, new_record2, new_record3, new_record4]
     assert (order_processor.calculate_total_charge(ME, all_records) == 568.02)
 
-    # add new one for maine,
-
 
 def test_clothing_below_175_dollars_MA():
     new_record1 = order_processor.Record('jacket', 174, 'Clothing')
