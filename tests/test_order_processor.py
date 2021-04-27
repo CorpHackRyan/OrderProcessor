@@ -8,8 +8,8 @@
 import order_processor
 
 MA = "MA"
-VT = "VT"
 NH = "NH"
+ME = "ME"
 
 
 def test_verify_bad_state():
@@ -27,7 +27,7 @@ def test_verify_good_states():
     all_records = [new_record3, new_record2, new_record1]
     assert (order_processor.calculate_total_charge(MA, all_records) == 862.50)
     assert (order_processor.calculate_total_charge(NH, all_records) == 825.00)
-    assert (order_processor.calculate_total_charge(VT, all_records) == 861.00)
+    assert (order_processor.calculate_total_charge(ME, all_records) == 867.62)
 
 
 def test_verify_total_cost_MA():
@@ -52,13 +52,15 @@ def test_verify_total_cost_NH():
     assert (order_processor.calculate_total_charge(NH, all_records) == 3130.00)
 
 
-def test_verify_total_cost_VT():
+def test_verify_total_cost_ME():
     new_record1 = order_processor.Record('peach', 25, 'everything else')
     new_record2 = order_processor.Record('pear', 10, 'Wic Eligible food')
     new_record3 = order_processor.Record('rice', 500, 'Wic Eligible food')
     new_record4 = order_processor.Record('jacket', 30, 'Clothing')
     all_records = [new_record1, new_record2, new_record3, new_record4]
-    assert (order_processor.calculate_total_charge(VT, all_records) == 566.50)
+    assert (order_processor.calculate_total_charge(ME, all_records) == 568.02)
+
+    # add new one for maine,
 
 
 def test_clothing_below_175_dollars_MA():

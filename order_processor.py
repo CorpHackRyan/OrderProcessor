@@ -15,7 +15,7 @@ def calculate_total_charge(abbr_state, list_of_records):
     # MA = tax exempt from: Clothing (everything after $175 is taxed), WIC
 
     state_tax = {'MA': 0.0625,
-                 'VT': 0.06}
+                 'ME': 0.055}
     total_cost = 0.0
     print('\n')
 
@@ -23,11 +23,11 @@ def calculate_total_charge(abbr_state, list_of_records):
         if abbr_state == "NH":
             total_cost = total_cost + each_record.item_price
 
-        elif abbr_state == "VT":
+        elif abbr_state == "ME":
             if each_record.item_type == "Wic Eligible food":
                 total_cost = total_cost + each_record.item_price
             elif each_record.item_type == "Clothing":
-                total_cost = total_cost + each_record.item_price
+                total_cost = total_cost + (each_record.item_price * state_tax[abbr_state]) + each_record.item_price
             elif each_record.item_type == "everything else":
                 total_cost = total_cost + (each_record.item_price * state_tax[abbr_state]) + each_record.item_price
 
