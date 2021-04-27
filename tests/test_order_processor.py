@@ -1,10 +1,3 @@
-# Invite your instructor to the github project.
-# Include a readme.md that tells me what your production function is and how to run your tests.
-# Test Good Cases: check the state amounts are correct for each state
-# Test Bad Cases: send something bad in, and assert it was bad,
-# Test edge cases: garble
-# Research other style of automated testing
-
 import order_processor
 
 MA = "MA"
@@ -74,7 +67,7 @@ def test_clothing_above_175_dollars_MA():
 
 
 def test_verify_no_refund():
-    new_record1 = order_processor.Record('sweatshirt', 0, 'Clothing')
+    new_record1 = order_processor.Record('sweatshirt', -10, 'Clothing')
     new_record2 = order_processor.Record('soup', 0, 'Wic Eligible food')
     all_records = [new_record1, new_record2]
     assert (order_processor.calculate_total_charge(MA, all_records) == -1)
