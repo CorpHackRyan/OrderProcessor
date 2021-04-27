@@ -3,9 +3,9 @@ _Simple program design using automated tests to calculate the total cost to char
 
 ## Production code
 
-This production code has a single function called calculate_total_charge that accepts two parameters (state and list of records). 
+This production code has a single function called calculate_total_charge() that accepts two parameters (a state and list of records). 
 This function, when given the proper inputs, will calculate the total to charge a customer at checkout. The total that is charged
-to the customer will depend on what type of item is being bought and which state they are buying from. 
+to the customer will depend on what type of item which is being purchased and which state they are buying that item in. 
 
 This function will take in 2 parameters. The first parameter is an abbreviated state. Since we are only dealing with
 New Hampshire, Maine and Massachusetts, these will be the only 3 abbreviations allowed as input (NH, ME & MA respectively).
