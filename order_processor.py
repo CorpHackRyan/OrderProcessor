@@ -1,13 +1,3 @@
-# Calculate the total to charge a customer at checkout based on which state its purchased from and if the item is
-# eligible to be taxed.
-# 4/24/21 - 10 mins
-# 4/25/21 - 45 minutes invested
-# 4/26/21 - 1st sesh: 1 hr 15 mins,
-#           2nd sesh: 25 mions
-#           3rd sesh: 25 mins
-#           4th sesh: 25 mins
-#           5th sesh:
-
 from dataclasses import dataclass
 
 
@@ -19,15 +9,15 @@ class Record:
 
 
 def calculate_total_charge(abbr_state, list_of_records):
+    # Types of goods accepted: Wic Eligible food, Clothing, everything else
+    # NH = tax exempt from: Clothing, WIC, everything else
+    # VT = tax exempt from: Clothing, WIC
+    # MA = tax exempt from: Clothing (everything after $175 is taxed), WIC
+
     state_tax = {'MA': 0.0625,
                  'VT': 0.06}
     total_cost = 0.0
     print('\n')
-
-    # Types of goods accepted: Wic Eligible food, Clothing, everything else
-    # NH = tax exempt from: Clothing, WIC, Everything else
-    # VT = tax exempt from: Clothing, WIC
-    # MA = tax exempt from: Clothing(everything after $175 is taxed), WIC
 
     for each_record in list_of_records:
         if abbr_state == "NH":
@@ -62,6 +52,5 @@ def calculate_total_charge(abbr_state, list_of_records):
     return total_cost
 
 
-
-if __name__ == '__main__':
-    pass
+# if __name__ == '__main__':
+#    pass

@@ -19,6 +19,7 @@ def test_verify_bad_state():
     all_records = [new_record3, new_record2, new_record1]
     assert (order_processor.calculate_total_charge("BAD STATE", all_records) == -1)
 
+
 def test_verify_good_states():
     new_record1 = order_processor.Record('pant', 175, 'Clothing')
     new_record2 = order_processor.Record('diaper', 50, 'Wic Eligible food')
@@ -27,6 +28,45 @@ def test_verify_good_states():
     assert (order_processor.calculate_total_charge(MA, all_records) == 862.50)
     assert (order_processor.calculate_total_charge(NH, all_records) == 825.00)
     assert (order_processor.calculate_total_charge(VT, all_records) == 861.00)
+
+
+def test_verify_total_cost_MA():
+    new_record1 = order_processor.Record('pant', 100, 'Clothing')
+    new_record2 = order_processor.Record('diaper', 50, 'Wic Eligible food')
+    new_record3 = order_processor.Record('pc', 400, 'everything else')
+    new_record4 = order_processor.Record('shoe', 100, 'Clothing')
+    new_record5 = order_processor.Record('tie', 100, 'Clothing')
+    new_record6 = order_processor.Record('socks', 100, 'everything else')
+    all_records = [new_record3, new_record2, new_record1, new_record6, new_record5, new_record4]
+    assert (order_processor.calculate_total_charge(MA, all_records) == 881.25)
+
+
+def test_verify_total_cost_NH():
+    new_record1 = order_processor.Record('peach', 55, 'Wic Eligible food')
+    new_record2 = order_processor.Record('pear', 45, 'Wic Eligible food')
+    new_record3 = order_processor.Record('rice', 1000, 'Wic Eligible food')
+    new_record4 = order_processor.Record('jacket', 2000, 'Clothing')
+    new_record5 = order_processor.Record('video games', 10, 'everything else')
+    new_record6 = order_processor.Record('monitor', 20, 'everything else')
+    all_records = [new_record1, new_record2, new_record3, new_record4, new_record5, new_record6]
+    assert (order_processor.calculate_total_charge(NH, all_records) == 3130.00)
+
+
+def test_verify_total_cost_VT():
+    new_record1 = order_processor.Record('peach', 25, 'everything else')
+    new_record2 = order_processor.Record('pear', 10, 'Wic Eligible food')
+    new_record3 = order_processor.Record('rice', 500, 'Wic Eligible food')
+    new_record4 = order_processor.Record('jacket', 30, 'Clothing')
+    all_records = [new_record1, new_record2, new_record3, new_record4]
+    assert (order_processor.calculate_total_charge(VT, all_records) == 566.50)
+
+
+def test_clothing_above_or_below_175_dollars_MA():
+    new_record1 = order_processor.Record('jacket', 174, 'Clothing')
+    new_record2 = order_processor.Record('shirts', 176, 'Clothing')
+
+    assert (order_processor.calculate_total_charge(MA, new_record1) == 0.0)
+    assert (order_processor.calculate_total_charge(MA, new_record2) == 0.0)
 
     for all_recs in all_records:
         # print(all_recs)
