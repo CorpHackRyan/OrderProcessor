@@ -11,7 +11,7 @@ class Record:
 def calculate_total_charge(abbr_state, list_of_records):
     # Types of goods accepted: Wic Eligible food, Clothing, everything else
     # NH = tax exempt from: Clothing, WIC, everything else
-    # VT = tax exempt from: Clothing, WIC
+    # ME = tax exempt from: WIC
     # MA = tax exempt from: Clothing (everything after $175 is taxed), WIC
 
     state_tax = {'MA': 0.0625,
