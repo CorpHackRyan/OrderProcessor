@@ -1,34 +1,32 @@
-## Capstone Homework #1 design with tests.
-Due: Tuesday April 27 at 11:59 pm
+## Summary
+_Simple program design using automated tests to calculate the total cost to charge a customer including sales tax._
 
-ESTIMATED TIME TO COMPLETE: 45mins - 2hrs
+## Production code
 
-### Summary: 
-In this exercise you will do some program design using automated tests
+This production code has a single function called calculate_total_charge that accepts two parameters (state and list of records). 
+This function, when given the proper inputs, will calculate the total to charge a customer at checkout. The total that is charged
+to the customer will depend on what type of item is being bought and which state they are buying from. 
 
-Production code:  
-Write a production code function to accomplish the following task, (you can of course have helper
-functions/methods that are intended to be private, but there should be a single public function that
-accomplishes the task and gets tested)
+This function will take in 2 parameters. The first parameter is an abbreviated state. Since we are only dealing with
+New Hampshire, Maine and Massachusetts, these will be the only 3 abbreviations allowed as input (NH, ME & MA respectively).
 
-Your function needs to calculate the total to charge a customer at checkout. The function should take
-the users state and a list of records* of items to be purchased, it should return the total that the user will
-be charged (including sales tax).
+The second parameter of this function will take a list of records (using dataclasses) that contain an item type, price and name. 
+For the types of goods, the only ones used are: 
+- “Wic Eligible food”
+- "Clothing"
+- “everything else”
+## Output
+Each state has its own rules for sales tax and this code takes that into account. Some items will be taxed, not taxed 
+or taxed when a certain threshold is met. Each states rules are as follows:
 
-This method cannot be used to process refunds.
+- New Hampshire: All items are exempt from sales tax
+- Maine: Wic Eligible food is exempt from sales tax. Clothing & everything else is taxed a 5.5%.
+- Massachusetts: Wic Eligible food is exempt from sales tax. For clothing, anything over $175 is taxed and everything 
+else is taxed at 6.25%.
+  
+## Tests
+This has built in automated testing using pytest and GitHub actions. To run the tests, execute the 
+test_order_processor.py script to begin testing. 
 
-Let’s limit the states we do business in to Massachusetts. New Hampshire and Maine. We will limit the
-types of goods we sell (in the record type field) to these three for simplicity: “Wic Eligible food”,
-Clothing, and “everything else”
- 
-# Tests:
-Write automated tests to thoroughly test the function your are writing above.
-
-### Academic Deliverables:
-Upload the production and test code to github and invite your instructor to the github project. Include a
-readme.md that tells me what your production function is and how to run your tests.
-
-The usual languages are fine for this project, if you want to use something unusual check with me.
-*struct in go/rust/c/c++, data class in python, a record or something similar in java – with data
-members but no useful methods, put the basic record class in your file so your tests can create test
-work. The record should have three fields, the item name, the price, and the item type.
+## Requirements
+You must have dataclasses installed in order to run this code.
