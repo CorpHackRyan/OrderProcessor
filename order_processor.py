@@ -9,6 +9,7 @@ class Record:
 
 
 def calculate_total_charge(abbr_state, list_of_records):
+
     state_tax = {'MA': 0.0625,
                  'ME': 0.055}
     total_cost = 0.0

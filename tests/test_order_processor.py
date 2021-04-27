@@ -61,8 +61,8 @@ def test_clothing_below_175_dollars_MA():
 
 
 def test_clothing_above_175_dollars_MA():
-    new_record2 = order_processor.Record('shirts', 176, 'Clothing')
-    all_records = [new_record2]
+    new_record1 = order_processor.Record('shirts', 176, 'Clothing')
+    all_records = [new_record1]
     assert (order_processor.calculate_total_charge(MA, all_records) == 176.06)
 
 
