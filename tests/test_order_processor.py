@@ -67,8 +67,3 @@ def test_clothing_above_or_below_175_dollars_MA():
 
     assert (order_processor.calculate_total_charge(MA, new_record1) == 0.0)
     assert (order_processor.calculate_total_charge(MA, new_record2) == 0.0)
-
-    for all_recs in all_records:
-        # print(all_recs)
-        pass
-
