@@ -18,9 +18,9 @@ NH = "NH"
 def test_calculate_total_charge():
 
 
-    new_record1 = order_processor.Record('shirt', 1.55, 'Clothing')
-    new_record2 = order_processor.Record('baby formula', 3.00, 'Wic Eligible food')
-    new_record3 = order_processor.Record('TV', 6.00, 'everything else')
+    new_record1 = order_processor.Record('shirt', 275, 'Clothing')
+    new_record2 = order_processor.Record('baby formula', 0, 'Wic Eligible food')
+    new_record3 = order_processor.Record('TV', 0, 'everything else')
 
     all_records = [new_record3, new_record2, new_record1]
 
