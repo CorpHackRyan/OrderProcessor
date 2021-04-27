@@ -64,9 +64,10 @@ def test_verify_total_cost_VT():
 def test_clothing_below_175_dollars_MA():
     new_record1 = order_processor.Record('jacket', 174, 'Clothing')
     all_records = [new_record1]
-    assert (order_processor.calculate_total_charge(MA, all_records) == 0.0)
+    assert (order_processor.calculate_total_charge(MA, all_records) == 174)
 
 
 def test_clothing_above_175_dollars_MA():
     new_record2 = order_processor.Record('shirts', 176, 'Clothing')
-    assert (order_processor.calculate_total_charge(MA, new_record2) == 0.0)
+    all_records = [new_record2]
+    assert (order_processor.calculate_total_charge(MA, all_records) == 176.06)

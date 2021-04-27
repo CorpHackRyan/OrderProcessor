@@ -48,9 +48,5 @@ def calculate_total_charge(abbr_state, list_of_records):
             print(abbr_state, "State is not valid")
             return -1
 
-    print(total_cost)
+    total_cost = round(total_cost, 2)
     return total_cost
-
-
-# if __name__ == '__main__':
-#    pass
